@@ -16,6 +16,7 @@ in
     jq        # json on the command line
     lazygit
     neovim
+    mise
     # the font everything renders in
     nerd-fonts.hack
   ];
@@ -28,6 +29,8 @@ in
     syntaxHighlighting.enable = true;  # commands turn green when valid
     initContent = ''
       bindkey '^f' autosuggest-accept
+
+      eval "$(mise activate zsh)"
     '';
     shellAliases = {
       ".." = "cd ..";
@@ -74,4 +77,6 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
   home.file.".config/opencode/AGENTS.md".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
+  home.file.".config/mise/config.toml".source =
+  config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/mise/config.toml";
 }
