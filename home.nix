@@ -31,6 +31,10 @@ in
       bindkey '^f' autosuggest-accept
 
       eval "$(mise activate zsh)"
+
+      if [ -f "$HOME/.dotfiles-local/env.zsh" ]; then
+        source "$HOME/.dotfiles-local/env.zsh"
+      fi
     '';
     shellAliases = {
       ".." = "cd ..";
