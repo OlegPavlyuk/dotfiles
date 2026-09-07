@@ -17,6 +17,7 @@ in
     lazygit
     neovim
     mise
+    tree-sitter
     # the font everything renders in
     nerd-fonts.hack
   ];
